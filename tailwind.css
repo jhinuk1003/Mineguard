@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --button-large-font-family: "Poppins", sans-serif;
+  --button-large-font-size: 16px;
+  --button-large-font-style: normal;
+  --button-large-font-weight: 600;
+  --button-large-letter-spacing: 0.2px;
+  --button-large-line-height: 24px;
+}
+
+@layer base {
+  :root {
+    --background: 266 70% 8%;         /* #120726 - Royal Midnight Indigo */
+    --foreground: 45 100% 95%;         /* #FFFBEB - Ivory Warm */
+
+    --muted: 270 50% 16%;
+    --muted-foreground: 40 20% 70%;
+
+    --popover: 268 65% 12%;
+    --popover-foreground: 45 100% 96%;
+
+    --border: 43 89% 67%;              /* #F5D061 - Zari Gold */
+    --input: 270 50% 20%;
+
+    --card: 268 62% 11%;
+    --card-foreground: 45 100% 96%;
+
+    --primary: 331 82% 50%;            /* #E11D74 - Rani Pink */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 29 100% 50%;          /* #FF7A00 - Marigold Orange */
+    --secondary-foreground: 0 0% 0%;
+
+    --accent: 173 100% 33%;            /* #00A896 - Peacock Teal */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 345 82% 41%;        /* #BE123C - Crimson Sindoor */
+    --destructive-foreground: 0 0% 100%;
+
+    --ring: 43 89% 67%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    border-color: rgba(245, 208, 97, 0.25);
+  }
+
+  body {
+    background-color: #120726;
+    color: #FFF8E7;
+    font-family: 'Poppins', 'Rajdhani', sans-serif;
+    background-image: 
+      radial-gradient(circle at 15% 20%, rgba(225, 29, 116, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(255, 122, 0, 0.12) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(0, 168, 150, 0.08) 0%, transparent 60%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+
+  /* Custom Royal Scrollbar */
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #140827;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #E11D74 0%, #FF7A00 50%, #F5D061 100%);
+    border-radius: 9999px;
+    border: 2px solid #140827;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #FF4D97 0%, #FFA047 50%, #FDE68A 100%);
+  }
+}
+
+/* Desi Maximalism Special Utility Classes */
+@layer utilities {
+  /* Ornate Gold Border & Card Styles */
+  .desi-card {
+    background: linear-gradient(145deg, rgba(38, 14, 69, 0.95) 0%, rgba(24, 8, 48, 0.95) 100%);
+    border: 1px solid rgba(245, 208, 97, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(10, 3, 20, 0.65), inset 0 0 0 1px rgba(245, 208, 97, 0.15);
+    position: relative;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .desi-card:hover {
+    border-color: rgba(245, 208, 97, 0.7);
+    box-shadow: 0 12px 40px 0 rgba(225, 29, 116, 0.25), 0 0 20px rgba(245, 208, 97, 0.35), inset 0 0 0 1px rgba(255, 184, 0, 0.3);
+    transform: translateY(-3px);
+  }
+
+  .desi-card-crimson {
+    background: linear-gradient(145deg, rgba(74, 8, 24, 0.9) 0%, rgba(28, 6, 15, 0.95) 100%);
+    border: 1px solid rgba(225, 29, 116, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(190, 18, 60, 0.3);
+  }
+
+  .desi-card-peacock {
+    background: linear-gradient(145deg, rgba(4, 52, 50, 0.9) 0%, rgba(2, 28, 28, 0.95) 100%);
+    border: 1px solid rgba(0, 168, 150, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(0, 168, 150, 0.3);
+  }
+
+  .desi-card-gold {
+    background: linear-gradient(145deg, rgba(58, 42, 12, 0.9) 0%, rgba(26, 18, 5, 0.95) 100%);
+    border: 1px solid rgba(245, 208, 97, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(245, 208, 97, 0.25);
+  }
+
+  /* Golden Zari Border */
+  .zari-border {
+    border: 2px solid transparent;
+    background-image: linear-gradient(#1E0C38, #1E0C38), linear-gradient(90deg, #F5D061, #E11D74, #FF7A00, #F5D061);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  .zari-border-glow {
+    box-shadow: 0 0 16px rgba(245, 208, 97, 0.5), inset 0 0 12px rgba(225, 29, 116, 0.25);
+  }
+
+  /* Text Gradients */
+  .desi-text-gold {
+    background: linear-gradient(135deg, #FFF0B3 0%, #F5D061 50%, #C8963E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .desi-text-fire {
+    background: linear-gradient(135deg, #FFA047 0%, #FF7A00 45%, #E11D74 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .desi-text-peacock {
+    background: linear-gradient(135deg, #05D5BE 0%, #00A896 50%, #F5D061 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Button Gradients */
+  .desi-btn-primary {
+    background: linear-gradient(135deg, #FF7A00 0%, #E11D74 100%);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 240, 179, 0.4);
+    box-shadow: 0 4px 18px rgba(225, 29, 116, 0.45);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+  }
+
+  .desi-btn-primary:hover {
+    background: linear-gradient(135deg, #FFA047 0%, #FF2688 100%);
+    box-shadow: 0 6px 25px rgba(255, 122, 0, 0.6), 0 0 12px rgba(245, 208, 97, 0.5);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .desi-btn-gold {
+    background: linear-gradient(135deg, #FDE68A 0%, #F5D061 50%, #C8963E 100%);
+    color: #120726;
+    border: 1px solid #FFF5CC;
+    box-shadow: 0 4px 20px rgba(245, 208, 97, 0.5);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+  }
+
+  .desi-btn-gold:hover {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FDE68A 50%, #E6AF2E 100%);
+    box-shadow: 0 6px 28px rgba(245, 208, 97, 0.8), 0 0 15px rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .desi-btn-outline {
+    background: rgba(38, 14, 69, 0.7);
+    color: #F5D061;
+    border: 1.5px solid rgba(245, 208, 97, 0.6);
+    box-shadow: 0 4px 15px rgba(18, 7, 38, 0.4);
+    transition: all 0.25s ease;
+  }
+
+  .desi-btn-outline:hover {
+    background: rgba(225, 29, 116, 0.2);
+    border-color: #F5D061;
+    color: #FFFFFF;
+    box-shadow: 0 0 15px rgba(245, 208, 97, 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* Truck Art & Royal Decree Badge */
+  .truck-art-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'Rajdhani', 'Yatra One', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.35rem 1rem;
+    border-radius: 9999px;
+    border: 1.5px solid #F5D061;
+    background: linear-gradient(90deg, rgba(225, 29, 116, 0.85) 0%, rgba(255, 122, 0, 0.85) 100%);
+    color: #FFFFFF;
+    box-shadow: 0 0 12px rgba(245, 208, 97, 0.4), 0 3px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Geometric Jali Screen Pattern */
+  .jali-pattern {
+    background-color: #120726;
+    background-image: radial-gradient(#F5D061 0.75px, transparent 0.75px), radial-gradient(#E11D74 0.75px, #120726 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    background-opacity: 0.15;
+  }
+
+  /* Mandala Radial Background Overlay */
+  .mandala-radial {
+    background: radial-gradient(circle at center, rgba(225, 29, 116, 0.18) 0%, rgba(255, 122, 0, 0.1) 35%, rgba(18, 7, 38, 0) 70%);
+  }
+
+  /* Ornate Corner Accent on Cards */
+  .ornate-corner {
+    position: relative;
+  }
+  .ornate-corner::before {
+    content: "✦";
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    color: #F5D061;
+    font-size: 10px;
+    opacity: 0.75;
+  }
+  .ornate-corner::after {
+    content: "✦";
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    color: #F5D061;
+    font-size: 10px;
+    opacity: 0.75;
+  }
+
+  /* Festive Marigold Garland Strip */
+  .marigold-border-top {
+    border-top: 3px solid transparent;
+    border-image: repeating-linear-gradient(
+      90deg,
+      #FF7A00 0,
+      #FF7A00 12px,
+      #FFB800 12px,
+      #FFB800 24px,
+      #E11D74 24px,
+      #E11D74 36px,
+      #10B981 36px,
+      #10B981 48px
+    ) 3;
+  }
+
+  /* Festive Marigold Garland Strip Bottom */
+  .marigold-border-bottom {
+    border-bottom: 3px solid transparent;
+    border-image: repeating-linear-gradient(
+      90deg,
+      #FF7A00 0,
+      #FF7A00 12px,
+      #FFB800 12px,
+      #FFB800 24px,
+      #E11D74 24px,
+      #E11D74 36px,
+      #10B981 36px,
+      #10B981 48px
+    ) 3;
+  }
+}
