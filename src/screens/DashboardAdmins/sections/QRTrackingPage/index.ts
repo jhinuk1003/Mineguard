@@ -1,0 +1,1 @@
+export { QRTrackingPage } from "./QRTrackingPage"; 
